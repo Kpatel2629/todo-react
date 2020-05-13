@@ -1,0 +1,25 @@
+.Todo {
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    width:"auto";
+    height:70px;
+    background:#eee;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 35px;
+    margin-bottom: 20px; 
+    color: maroon;
+    box-shadow: 7px 7px 9px rgba(0,0,0,0.15), -7px -7px 9px rgba(255,255,255,0.65);
+}
+
+body{
+  height: calc(100vh - 25px);
+  background-color:#eee;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #404040;
+  margin: 10px auto;
+}

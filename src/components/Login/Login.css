@@ -1,0 +1,24 @@
+.AddPerson {
+    text-align: center;    
+}
+
+
+ input {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 16px*20;
+  font-size: 20px;
+  color:  rgb(61, 11, 107);
+  padding: 16px;;
+  background-color:#EBECF0;;
+  text-shadow: 1px 1px 0 white;
+  border-radius: 35px;
+  box-shadow:  inset 2px 2px 5px  #BABECC, inset -5px -5px 10px white;
+  width: 500px;
+  box-sizing: border-box;
+  appearance: none;
+ 
+    box-shadow:  inset 1px 1px 2px #BABECC, inset -1px -1px 2px white;
+  }
+ 
