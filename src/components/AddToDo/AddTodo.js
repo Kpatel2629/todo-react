@@ -37,11 +37,11 @@ class AddPerson extends Component {
          <div className="AddPerson">
              <h1 style={{marginBottom:"40px",marginTop:"40px",color:"purple"}} >ToDo App</h1>
         <h3 style={{marginBottom:"40px",marginTop:"40px",color:"green"}} >
-             {(this.props.userName === '' && this.props.password === '') ? <Loading text = "loading..." /> : 
+             {(this.props.userName === '' && this.props.password === '') ? <Loading /> : 
         (this.state.greetMsg +" @" +this.props.userName)}</h3>
 
             <input name = 'name' value={this.state.name} type="text" placeholder="Name" onChange={this.inputChangeHandler}></input>
-            <button className="addbtn" onClick={() => this.props.todoAdded(this.state.name)}>Add</button>
+            <button className="addbtn" onClick={() => this.props.todoAdded({name:this.state.name,isCompleted:false})}>Add</button>
         </div>
         );
     }

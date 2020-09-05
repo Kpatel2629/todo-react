@@ -1,9 +1,9 @@
 import React from 'react';
+import './SignUp/Signup.css'
 
-
-const Loading = (props) => {
+const Loading = () => {
     return(
-    <h4>{props.text}</h4>
+    <div className = "loader"></div>
 )};
 
 export default Loading;

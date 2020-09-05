@@ -4,14 +4,16 @@ import { updateObject } from '../Utility/Utility';
 const initialState = {
     username:'',
     password:'',
-    todos: []
+    todos: [],
+    error:'',
+    loading:false,
 };
 
 const addTodo = (state,action) => {
     const newTodo = {
-        id: Math.random(), // not really unique but good enough here!
+        id: action.TodoData.id, 
         name: action.TodoData.name,
-        isCompleted:false
+        isCompleted:action.TodoData.isCompleted
     }
     const updatedTodo = state.todos.concat( newTodo ) // Returns a copy of array not a ref to original array.
     return updateObject(state,{todos:updatedTodo})
@@ -28,15 +30,29 @@ const deleteTodo = (state,action) =>{
     return updateObject(state,{todos:RemainigTodos})
 }
 
+const funError = (state,action) => {
+    return updateObject(state,{error : action.error});
+}
+
+const On_StartRequest = (state,action) => {
+    return updateObject(state,{loading : action.loading})
+}
+
+const get_alltodos = (state,action) => {
+    return updateObject(state,{todos : action.todos})
+}
 
 const reducer = ( state = initialState, action ) => {
     switch ( action.type ) {
+        case actionTypes.GET_ALLTODOS : return get_alltodos(state,action);
+        case actionTypes.ON_ERROR : return funError(state,action) ;
+        case actionTypes.On_STARTREQUESTIG : return On_StartRequest(state,action);
         case actionTypes.ADD_TODO : return addTodo(state,action);
         case actionTypes.REMOVE_TODO: return removeTodo(state,action);
         case actionTypes.DELETE_TODO: return deleteTodo(state,action);
-        case actionTypes.ADD_USER:return updateObject(state,{username:action.UserData.username,password:action.UserData.password})
+        case actionTypes.ADD_USER:return updateObject(state,{username:action.UserData.username,password:action.UserData.password});
+        default : return state;
     }
-    return state;
 };
 
 export default reducer;

@@ -1,31 +1,20 @@
 import React, { Component } from 'react';
-import {Route,Switch,withRouter } from 'react-router-dom';
-import '../commonComp/BeautyButton.css';
-import BeautyButton from '../commonComp/BeautyButton';
+import {withRouter } from 'react-router-dom';
+import NavigationItem from '../commonComp/navComp';
 
 
 
 class NavBar extends Component {
 
-    componentDidMount = ()=> console.log(this.props);
-  
-    
-    routeHandler = (pasRoute) => {
-      this.props.history.replace(pasRoute);
-
-    }
-  
-    render() {
-      return (
-          <div >
+  render() {
+    return (
+          <div style={{textAlign:"center"}}>
             <header>
-                 <BeautyButton clicked = {() =>{this.routeHandler('/')}} text="Log in"/>
-                 <BeautyButton clicked = {() =>{this.routeHandler('/signup')}} text="sign up"/>
+                 <NavigationItem to="/signup" style ={{display:'inline-block',marginLeft:'10px', textDecoration: 'none'}} text="sign up"/>
+                 <NavigationItem to="/" style ={{display:'inline-block',marginLeft:'10px', textDecoration: 'none'}} text="Log in"/>
+                 <NavigationItem to="/about" style ={{display:'inline-block',marginLeft:'10px', textDecoration: 'none'}}  text="About"/>
             </header>
-            
-           
           </div>
-        
       );
     }
   }

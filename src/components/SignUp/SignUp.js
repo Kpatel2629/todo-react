@@ -1,8 +1,6 @@
 import React,{ Component } from 'react';
-import * as actionCreaters from '../../store/actions';
-import { connect } from 'react-redux';
 import BeautyButton from '../commonComp/BeautyButton';
-import './Signup.css';
+import '../AddToDo/AddPerson.css'
 import NavBar from '../NavBar/NavBar';
 
 class SignUp extends Component {
@@ -27,8 +25,8 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div className="Signuppage">  
-            
+            <div className="AddPerson">  
+            <NavBar/>
              <h1 style={{marginBottom:"40px",marginTop:"40px",color:"purple"}} >Create an account</h1>
              <input  style={{marginBottom:"30px"}}  name = 'name'     value={this.state.name}     type="text"     placeholder="First Name"   onChange={this.inputChangeHandler}></input> <br/>       
              <input  style={{marginBottom:"30px"}}  name = 'username' value={this.state.username} type="text"     placeholder="Username"     onChange={this.inputChangeHandler}></input><br/>

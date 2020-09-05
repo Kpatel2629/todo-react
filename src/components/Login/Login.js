@@ -3,6 +3,7 @@ import * as actionCreaters from '../../store/actions';
 import './Login.css';
 import { connect } from 'react-redux';
 import BeautyButton from '../commonComp/BeautyButton';
+import NavBar from '../NavBar/NavBar';
 
 class Login extends Component {
 
@@ -24,6 +25,7 @@ class Login extends Component {
     render(){
       return(          
          <div className="AddPerson">
+             <NavBar/>
              <h1 style={{marginBottom:"40px",marginTop:"40px",color:"purple"}} >Log In</h1>
              <input style={{marginBottom:"30px"}} name = 'username' value={this.state.username} type="text" placeholder="Username" onChange={this.inputChangeHandler}></input>
              <br/>

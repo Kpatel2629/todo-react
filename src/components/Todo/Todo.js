@@ -1,14 +1,16 @@
-import React, {useEffect} from 'react';
+import React , { memo} from 'react';
 import './Todo.css';
 
-const todo = (props) => {
-    
+
+const todo = memo(props => {
 
     return(
-        <div className="Todo" onDoubleClick={props.deleted} onClick={props.clicked}>
+        <div className="Todo" style = {{display: props.show ? "flex" : "none"}} >
+          
             <h3 style = {{marginLeft:"20px"}}>{props.name}</h3> 
-            <text style = {{marginBottom:"10px",marginLeft:"30px",marginRight:"20px"}}>{props.status}</text>
+            <text  onClick= { props.clicked} style = {{marginBottom:"10px",marginLeft:"35px",marginRight:"20px"}}>{props.status}</text>
+            <button style = {{marginTop:"8px",marginLeft:"20px",marginRight:"20px"}} className = "delete" onClick = {props.deleted}> 	&#x274C; </button>
         </div>
-    )};
+    )});
 
-export default React.memo(todo);
+export default todo;

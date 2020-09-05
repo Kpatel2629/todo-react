@@ -13,7 +13,20 @@
     color: maroon;
     box-shadow: 7px 7px 9px rgba(0,0,0,0.15), -7px -7px 9px rgba(255,255,255,0.65);
 }
-
+.delete {
+  background: transparent;
+  border: 1px solid #f00;
+  border-radius: 2em;
+  color: #f00;
+  display: inline-block;
+  font-size: 19px;
+  height: 30px;
+  line-height: 2px;
+  margin: 0 0 8px;
+  padding: 0;
+  text-align: center;
+  width: 30px;
+  }
 body{
   height: calc(100vh - 25px);
   background-color:#eee;
